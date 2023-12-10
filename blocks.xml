@@ -1,0 +1,171 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="s4d_login" id="Hr}:5$Qy`B[3=O3Kf+Et" x="0" y="0">
+    <value name="TOKEN">
+      <block type="text" id="I;}h?~968z3,y]gZGPF?">
+        <field name="TEXT">MTE3MTA2MTY4MTc1ODE1MDcyNw.GMoRB8.LLSSblm5m-jF4Zxbm8ZbIXZcmspuAl-q_FpE7A</field>
+      </block>
+    </value>
+  </block>
+  <block type="frost_slash_register" id="k7H5]Z+v+.dO,?6)mDO$" x="0" y="106">
+    <statement name="OPTIONS">
+      <block type="frost_slash_command" id="-QyU2f[0tm(aM7xwd1aN">
+        <value name="NAME">
+          <shadow type="text" id="!~Hq}/0d^t59vyJ85J#c">
+            <field name="TEXT">send</field>
+          </shadow>
+        </value>
+        <value name="DESC">
+          <shadow type="text" id=",sKgp*+5}b//PLnj`/Gc">
+            <field name="TEXT">Broadcasts a message in this channel.</field>
+          </shadow>
+        </value>
+        <statement name="OPTIONS">
+          <block type="gsa_frost_slash_options" id="NG!XeLbFFYj+hp(.[--H">
+            <field name="TYPE">3</field>
+            <value name="NAME">
+              <shadow type="text" id="TDgDo#AV1KI#nN%N9{(T">
+                <field name="TEXT">message</field>
+              </shadow>
+            </value>
+            <value name="DESC">
+              <shadow type="text" id="Qa8aY*p,jL:.ca4MyQYv">
+                <field name="TEXT">The message to broadcast.</field>
+              </shadow>
+            </value>
+            <value name="REQUIRED">
+              <shadow type="logic_boolean" id="QCp~s8zA0tV5g:qAmN+2">
+                <field name="BOOL">TRUE</field>
+              </shadow>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="on_slash" id="oi9ihB(1.p7u]GmI)l31" x="0" y="610">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="RhFI;6lb$2L$H;@QTQ*m">
+        <value name="IF0">
+          <block type="logic_compare" id="xmkLuK=0C_7yWoXHYyc[">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="interaction_name" id="+jmUnXxeNY:h/O4Wed3|"></block>
+            </value>
+            <value name="B">
+              <block type="text" id="HF%_9OCASNGjUTM!6Q=9">
+                <field name="TEXT">send</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="slash_reply" id="~!gqD:hcyCOQo60Fh@F@">
+            <value name="CONTENT">
+              <block type="options" id="+BspPKZWbm2E,cw;7b4l">
+                <mutation mode="String" type="null"></mutation>
+                <field name="SEARCH">String</field>
+                <value name="BOOLEAN">
+                  <block type="text" id="2E[(C-s39Go.F$RUvfTK">
+                    <field name="TEXT">message</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="BOOLEAN">
+              <block type="logic_boolean" id="asE2+k=SQQS=wJu+c|vr">
+                <field name="BOOL">FALSE</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_member_join" id="PS{vYo5Z7yJq,aLAXyg]" x="0" y="984">
+    <statement name="STATEMENTS">
+      <block type="s4d_embed_create" id="?_VY!m=;$-Xc7xUaaBFn">
+        <field name="NAME">Welcome</field>
+        <statement name="THEN">
+          <block type="s4d_embed_set_color" id="{eOnNI=~k^*n/[le=7mw">
+            <value name="COLOUR">
+              <shadow type="colour_picker" id="@,q}F7w}*Wdq+g6g`M1d">
+                <field name="COLOUR">#666600</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="s4d_embed_set_title" id="FqW@gj|Sa4Jxw)@P8nOR">
+                <value name="TITLE">
+                  <shadow type="text" id="Sf|VnCdC^V4G[iLA,H/P">
+                    <field name="TEXT">New Member!</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="s4d_embed_set_desc" id="$r=HH_EmAycarrKK+Z#!">
+                    <value name="DESC">
+                      <shadow type="text" id=".0yysLGeDGwJg!$c]Q~F">
+                        <field name="TEXT">Some desc here...</field>
+                      </shadow>
+                      <block type="text_join" id="1,29Kd$fuOPjRqnR=B6;">
+                        <mutation items="3"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="jaY-0!llDA|9s.O-SLB?">
+                            <field name="TEXT">Welcome, </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="jg_members_member_s_nickname" id="FB1/e}6oMIWVw`-b-iTA">
+                            <value name="MEMBER">
+                              <block type="s4d_joining_member" id="A$9;G|;c)SrD?A6vmvVj"></block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="text" id="Z`;`LPMZm0e8yv93G3q3">
+                            <field name="TEXT">!</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="s4d_embed_set_image" id="TGpi$st67h6ca}FPHpPP">
+                        <value name="IMAGE">
+                          <shadow type="text" id="Qa~2fSwC^teQ,^)w*Ps!">
+                            <field name="TEXT">https://image.com</field>
+                          </shadow>
+                          <block type="s4d_member_icon" id="7Bur3?N}k!78!GA{xCCX">
+                            <value name="MEMBER">
+                              <block type="s4d_joining_member" id="Eb-MW;^Xu2Y=+HjAoCH("></block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+        <next>
+          <block type="s4d_send_channel" id="?GBI,(wdVuI-t._eEp[C">
+            <value name="CONTENT">
+              <block type="s4d_embed_send" id="`{Z62AE[R6P7lQ^S0pd9">
+                <field name="NAME">Welcome</field>
+              </block>
+            </value>
+            <value name="CHANNEL">
+              <block type="s4d_get_channel" id="Zm`-uf.I]+GYD($!`N2r">
+                <field name="SEARCH_TYPE">ID</field>
+                <value name="VALUE">
+                  <block type="text" id=")D,*ZpYfs-pP.i-7zC3S">
+                    <field name="TEXT">1152579398357233776</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
