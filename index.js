@@ -71,24 +71,24 @@
         ]
     });
 
-    // when the bot is connected say so
+    // * when the bot is connected say so
     s4d.client.on('ready', () => {
         console.log(s4d.client.user.tag + " is alive!")
     })
 
-    // upon error print "Error!" and the error
+    // * upon error print "Error!" and the error
     process.on('uncaughtException', function(err) {
         console.log('Error!');
         console.log(err);
     });
 
-    // give the new client to discord-logs
+    // * give the new client to discord-logs
     logs(s4d.client);
 
-    // pre blockly code
+    // * pre blockly code
 
 
-    // blockly code
+    // * blockly code
     await s4d.client.login('MTE3MTA2MTY4MTc1ODE1MDcyNw.GMoRB8.LLSSblm5m-jF4Zxbm8ZbIXZcmspuAl-q_FpE7A').catch((e) => {
         const tokenInvalid = true;
         const tokenError = e;
@@ -170,11 +170,8 @@
                         components: []
                     });
                 }
-
             })
         }
-
     });
-
-    return s4d
+    return s4d;
 })();
